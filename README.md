@@ -7,3 +7,10 @@ pip install -r requirement.txt
 ```
 python3 main.py
 ```
+
+3. Push heroku
+```
+heroku login
+heroku create ngoankeoo-calculator
+git push heroku master
+```
