@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add-Minus-Multiple-Device</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<h1 align="center">Calculator</h1>
+<div class="container">
+    <form method="post" action="/calculate" role="form">
+        <div class="form-group row">
+            <label for="firstNumber" class="col-sm-2 col-form-label">First Number</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="firstNumber" name="firstNumber" placeholder="First Number">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="secondNumber" class="col-sm-2 col-form-label">Second Number</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="secondNumber" name="secondNumber"
+                       placeholder="Second Number">
+            </div>
+        </div>
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Type</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" id="gridRadios1" value="plus"
+                               checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            Plus (+)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" id="gridRadios2" value="minus">
+                        <label class="form-check-label" for="gridRadios2">
+                            Minus (-)
+                        </label>
+                    </div>
+                    <div class="form-check disabled">
+                        <input class="form-check-input" type="radio" name="type" id="gridRadios3" value="multiple">
+                        <label class="form-check-label" for="gridRadios3">
+                            Multiple (*)
+                        </label>
+                    </div>
+                    <div class="form-check disabled">
+                        <input class="form-check-input" type="radio" name="type" id="divide"
+                               value="divide">
+                        <label class="form-check-label" for="divide">
+                            Devide (/)
+                        </label>
+                    </div>
+                    {% if show == True: %}
+                        {% if "Error" not in result: %}
+                        <div class="alert alert-info">
+                            <strong>Result: </strong> {{ result }}
+                        </div>
+                        {% endif %}
+
+                        {% if "Error" in result: %}
+                        <div class="alert alert-warning">
+                            {{ result }}
+                        </div>
+                        {% endif %}
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </fieldset>
+
+        <div class="form-group row">
+            <div class="col-sm-11">
+                <button type="submit" class="btn btn-primary">Calculate</button>
+            </div>
+            <div class="col-sm-1">
+                <a href="/">
+                    <button type="button" class="btn btn-primary">Back</button>
+                </a>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
