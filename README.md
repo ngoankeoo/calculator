@@ -1,11 +1,11 @@
 Web application Calculator 
 1. Install requirement 
 ```
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 2. Run 
 ```
-python3 main.py
+python3 wsgi.py
 ```
 
 3. Push heroku
