@@ -17,3 +17,6 @@ git push heroku master
 // Check log
 heroku logs --tail
 ```
+4. Link web app
+
+https://ngoankeoo-calculator.herokuapp.com/
