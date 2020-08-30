@@ -34,5 +34,3 @@ def multiple(a, b):
 def divide(a, b):
     return str(int(a) / int(b))
 
-
-app.run()
